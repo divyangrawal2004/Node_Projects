@@ -1,93 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products 🛒</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            padding: 40px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Cool Products 🛍️</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      color: #222;
+      margin: 0;
+      padding: 40px 20px;
+    }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            text-align: center;
-        }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
 
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
 
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            width: 280px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 25px;
+      color: #fff;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .card h2 {
-            margin-bottom: 10px;
-            color: #1e88e5;
-        }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    }
 
-        .card p {
-            font-size: 0.95em;
-            color: #555;
-        }
+    .card h2 {
+      margin-bottom: 12px;
+      font-size: 1.6em;
+      color: #ffe066;
+    }
 
-        .btn {
-            display: inline-block;
-            margin-top: 30px;
-            text-decoration: none;
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+    .card p {
+      font-size: 0.95em;
+      line-height: 1.6;
+      color: #f1f1f1;
+    }
 
-        .btn:hover {
-            background-color: #218838;
-        }
-    </style>
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      background: #ff6b6b;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #ff4757;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #fff;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Our Products 🥦🍎</h1>
+  <div class="container">
+    <h1>✨ Our Fresh Picks 🥗🍇</h1>
 
-        <div class="products">
-            <div class="card">
-                <h2>Fresh Apples 🍎</h2>
-                <p>Sweet, crunchy, and packed with nutrients. Perfect for a healthy snack!</p>
-            </div>
+    <div class="products">
+      <div class="card">
+        <h2>🍎 Juicy Apples</h2>
+        <p>Crisp, sweet, and full of nutrients. A perfect snack for anytime!</p>
+      </div>
 
-            <div class="card">
-                <h2>Organic Carrots 🥕</h2>
-                <p>Locally grown and full of flavor. Great for soups and salads.</p>
-            </div>
+      <div class="card">
+        <h2>🥕 Organic Carrots</h2>
+        <p>Fresh from the farm, crunchy and tasty. Great for your salads & soups.</p>
+      </div>
 
-            <div class="card">
-                <h2>Green Spinach 🌿</h2>
-                <p>Rich in iron and vitamins. A great choice for smoothies and meals.</p>
-            </div>
-        </div>
-
-        <a href="/contact" class="btn">📞 Contact Us</a>
+      <div class="card">
+        <h2>🌿 Power Spinach</h2>
+        <p>Rich in iron and vitamins. Perfect for smoothies and healthy meals.</p>
+      </div>
     </div>
+
+    <a href="/contact" class="btn">📞 Get in Touch</a>
+
+    <footer>
+      <p>🌟 Freshness Delivered | © 2025</p>
+    </footer>
+  </div>
 </body>
 </html>

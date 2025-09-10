@@ -1,78 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Page 📝</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #fff9f0;
-            color: #333;
-            padding: 40px;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Page 📝</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #ffecd2, #fcb69f);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
+    .container {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
+    h1 {
+      font-size: 3em;
+      color: #fff;
+      margin-bottom: 10px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    }
 
-        .post {
-            background: #f1f8e9;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: left;
-        }
+    p {
+      font-size: 1.2em;
+      color: #fffdfd;
+      margin-bottom: 40px;
+    }
 
-        .post h2 {
-            color: #388e3c;
-        }
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
 
-        .post p {
-            margin: 10px 0;
-        }
+    .post {
+      background: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        a.btn {
-            display: inline-block;
-            margin-top: 30px;
-            text-decoration: none;
-            color: white;
-            background-color: #007BFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    .post:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
 
-        a.btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    .post h2 {
+      font-size: 1.5em;
+      color: #ff6f61;
+      margin-bottom: 10px;
+    }
+
+    .post p {
+      color: #555;
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    a.btn {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-size: 1.1em;
+      background: linear-gradient(135deg, #ff6f61, #ff9a9e);
+      box-shadow: 0 4px 12px rgba(255, 111, 97, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    a.btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #e94e3c, #ff758c);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Our Blog 📝</h1>
-        <p>Latest thoughts, tips, and updates from our team 💡</p>
+  <div class="container">
+    <h1>Our Blog 📝</h1>
+    <p>Latest thoughts, tips, and updates from our team 💡</p>
 
-        <div class="post">
-            <h2>🌱 Why We Love Fresh Fruits & Veggies</h2>
-            <p>Eating fresh is not only healthy but also supports local farmers and the environment. We explore the benefits of going green and how you can start today!</p>
-        </div>
+    <div class="posts">
+      <div class="post">
+        <h2>🌱 Why We Love Fresh Fruits & Veggies</h2>
+        <p>Eating fresh is not only healthy but also supports local farmers and the environment. We explore the benefits of going green and how you can start today!</p>
+      </div>
 
-        <div class="post">
-            <h2>🚀 Building with Express.js</h2>
-            <p>Express makes backend development smooth and fun. Learn how we structure our apps and keep things simple using EJS and clean routing.</p>
-        </div>
-
-        <a href="/product" class="btn">🛒 Explore Our Products</a>
+      <div class="post">
+        <h2>🚀 Building with Express.js</h2>
+        <p>Express makes backend development smooth and fun. Learn how we structure our apps and keep things simple using EJS and clean routing.</p>
+      </div>
     </div>
+
+    <a href="/product" class="btn">🛒 Explore Our Products</a>
+  </div>
 </body>
 </html>

@@ -5,80 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Us 📞</title>
   <style>
+    /* Gradient background */
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff0f5;
-      color: #333;
-      padding: 40px;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
     }
 
     .container {
-      max-width: 600px;
-      margin: auto;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 650px;
+      width: 90%;
       text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.2s ease-in-out;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 20px;
-      color: #c2185b;
+      color: #fff;
     }
 
     form {
-      background-color: #fff;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
       text-align: left;
     }
 
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       font-weight: 600;
+      color: #f0f0f0;
     }
 
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      border: none;
       font-size: 1em;
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #e0e0e0;
+    }
+
+    input:focus, textarea:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #c2185b;
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, #ff6f61, #ff9a9e);
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 12px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 1.1em;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     button:hover {
-      background-color: #a31548;
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(255, 111, 97, 0.4);
     }
 
     .info {
       margin-top: 30px;
       font-size: 1em;
+      color: #f9f9f9;
+      line-height: 1.6;
     }
 
     .home-link {
       display: inline-block;
-      margin-top: 30px;
+      margin-top: 25px;
       text-decoration: none;
-      background-color: #007BFF;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
+      padding: 12px 26px;
+      border-radius: 30px;
       font-weight: bold;
+      transition: transform 0.3s ease;
     }
 
     .home-link:hover {
-      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>

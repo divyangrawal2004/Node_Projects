@@ -1,84 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us 🌟</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            padding: 40px;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us 🌟</title>
+  <style>
+    /* Background with gradient */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
 
-        h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-        }
+    /* Glassmorphism card */
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 850px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.5s ease-in-out;
+    }
 
-        p {
-            max-width: 700px;
-            margin: 15px auto;
-            font-size: 1.1em;
-        }
+    h1 {
+      font-size: 2.8em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 0;
-            margin: 10px auto;
-            max-width: 700px;
-        }
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      color: #f0f0f0;
+      margin: 15px 0;
+    }
 
-        ul li {
-            background: #e0f7fa;
-            margin: 5px 0;
-            padding: 10px 15px;
-            border-radius: 8px;
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 25px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
 
-        a {
-            display: inline-block;
-            margin-top: 30px;
-            text-decoration: none;
-            color: #fff;
-            background-color: #007BFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
+    ul li {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-weight: 500;
+      padding: 15px;
+      border-radius: 12px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
 
-        a:hover {
-            background-color: #0056b3;
-        }
+    ul li:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.35);
+    }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-        }
-    </style>
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #007BFF, #00C6FF);
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+
+    a:hover {
+      background: linear-gradient(135deg, #0056b3, #008cff);
+      transform: scale(1.05);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>About Us 🤝</h1>
+  <div class="container">
+    <h1>About Us 🤝</h1>
 
-        <p>Hello and welcome! 👋</p>
+    <p>Hello and welcome! 👋</p>
 
-        <p>We’re a small team of developers passionate about building clean and helpful web applications. Our goal is to share knowledge, build useful tools, and have fun while doing it! 💡✨</p>
+    <p>We’re a small team of developers passionate about building clean and helpful web applications. Our goal is to share knowledge, build useful tools, and have fun while doing it! 💡✨</p>
 
-        <p>Here’s what we love working with:</p>
-        <ul>
-            <li>Node.js ⚙️ - Powerful backend JavaScript runtime</li>
-            <li>Express.js 🚀 - Minimal and flexible web framework</li>
-            <li>EJS 📝 - Simple templating with JavaScript</li>
-            <li>HTML & CSS 🎨 - Web structure and styling</li>
-        </ul>
+    <p>Here’s what we love working with:</p>
+    <ul>
+      <li>⚙️ Node.js - Powerful backend JavaScript runtime</li>
+      <li>🚀 Express.js - Minimal and flexible web framework</li>
+      <li>📝 EJS - Simple templating with JavaScript</li>
+      <li>🎨 HTML & CSS - Web structure and styling</li>
+    </ul>
 
-        <p>Thanks for visiting our about page. We hope you enjoy exploring more! 🙏</p>
+    <p>Thanks for visiting our about page. We hope you enjoy exploring more! 🙏</p>
 
-        <a href="/blog">📝 Visit Our Blog</a>
-    </div>
+    <a href="/blog">📝 Visit Our Blog</a>
+  </div>
 </body>
 </html>

@@ -13,7 +13,7 @@ app.get('/',(req,res)=>{
 app.get('/about',(req,res)=>{
     return res.render("about");
 })
-app.get('/blog',checkage,(req,res)=>{
+app.get('/blog',checkage,(req,res)=>{ ///blog?age=20 aisa pass karenge to open hoga
     return res.render("blog");
 })
 app.get('/product',(req,res)=>{
