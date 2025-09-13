@@ -1,0 +1,207 @@
+/* -------- Base Layout -------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  display: flex;
+  background: #f4f6fb;
+}
+
+/* Content right of fixed sidebar */
+.content {
+  margin-left: 280px;   /* match your sidebar width */
+  flex: 1;
+  padding: 25px;
+}
+
+/* Card around table */
+.table-container {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+/* -------- Table -------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Header background */
+thead {
+  background: linear-gradient(90deg, #0d6efd, #3a7bd5);
+  color: #fff;
+}
+
+/* Cells */
+th, td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+/* Row hover */
+tbody tr:hover {
+  background: #f9fbff;
+}
+
+/* Cover image */
+td img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* -------- Header content (text + icon + sort) -------- */
+.header-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* Small rounded chip behind the main icon */
+.icon-badge {
+  --bg: rgba(255,255,255,0.14);
+  --fg: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--fg);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+  font-size: 13px;               /* icon size inside chip */
+  line-height: 1;
+}
+
+/* Column-wise custom colors for icons */
+/* Cover */
+.icon-cover  { --bg: #ffe3e3; --fg: #d6336c; }   /* pink chip + magenta icon */
+/* Title */
+.icon-title  { --bg: #fff3bf; --fg: #f59f00; }   /* soft yellow chip + amber icon */
+/* Author */
+.icon-author { --bg: #e7f5ff; --fg: #1e88e5; }   /* light blue chip + blue icon */
+/* ISBN */
+.icon-isbn   { --bg: #e6fcf5; --fg: #12b886; }   /* mint chip + green icon */
+/* Genre */
+.icon-genre  { --bg: #f3d9fa; --fg: #ae3ec9; }   /* lavender chip + purple icon */
+/* Total */
+.icon-total  { --bg: #fff4e6; --fg: #fd7e14; }   /* peach chip + orange icon */
+/* Description */
+.icon-desc   { --bg: #e9ecef; --fg: #343a40; }   /* grey chip + dark icon */
+/* Actions */
+.icon-actions{ --bg: #ffe8cc; --fg: #f76707; }   /* warm chip + orange icon */
+
+/* Sort (upar / niche) — subtle grey/white contrast */
+.sort-icons {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-left: 4px;
+  font-size: 10px;
+  line-height: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.sort-icons i {
+  color: #f1f3f5;               /* light */
+  transition: color .15s ease;
+}
+.sort-icons i:hover {
+  color: #ffffff;               /* brighter on hover */
+}
+
+/* -------- Action buttons -------- */
+.action-btn {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin: 0 2px;
+  cursor: pointer;
+  color: #fff;
+  transition: transform .12s ease, filter .2s ease;
+}
+.action-btn:active { transform: scale(0.97); }
+
+.view-btn   { background: #0d6efd; }
+.view-btn:hover   { filter: brightness(0.95); }
+
+.edit-btn   { background: #ffc107; color: #111; }
+.edit-btn:hover   { filter: brightness(0.95); color: #111; }
+
+.delete-btn { background: #dc3545; }
+.delete-btn:hover { filter: brightness(0.95); }
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+thead {
+  color: #fff;
+}
+
+thead th {
+  padding: 14px 16px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Individual column backgrounds */
+thead th:nth-child(1) { background: linear-gradient(135deg, #c7bbd461, #2574fc77); }  /* Cover */
+thead th:nth-child(2) { background: linear-gradient(135deg, #ff522fb0, #dd2477b4); }  /* Title */
+thead th:nth-child(3) { background: linear-gradient(135deg, #11998e58, #38ef7eb7); }  /* Author */
+thead th:nth-child(4) { background: linear-gradient(135deg, #f7951efc, #ffd000c5); color:#333; } /* ISBN */
+thead th:nth-child(5) { background: linear-gradient(135deg, #844d9bcb, #cf4ed6); }  /* Genre */
+thead th:nth-child(6) { background: linear-gradient(135deg, #36d1dc, #5b86e5); }  /* Total */
+thead th:nth-child(7) { background: linear-gradient(135deg, #ff9966e5, #ff5e61fd); }  /* Description */
+thead th:nth-child(8) { background: linear-gradient(135deg, #394c79f3, #4286f4df); }  /* Actions */
+
+/* Header text + icons flex */
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* Normal icons (book, image, gear etc.) */
+.header-content i {
+  font-size: 10px;
+  opacity: 0.95;
+}
+
+/* Sort icons (upar niche arrows) */
+.sort-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 4px;
+  font-size: 9px;
+  line-height: 10px;
+  cursor: pointer;
+}
+
+.sort-icons i {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+}
+
+.sort-icons i:hover {
+  color: #fff;
+}

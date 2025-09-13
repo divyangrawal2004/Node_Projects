@@ -1,0 +1,121 @@
+  body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 280px; /* thodi jyada width */
+      background: #1c2531;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100vh; /* full attach uper niche */
+      position: fixed; /* chipka rhe */
+      top: 0;
+      left: 0;
+    }
+
+    /* Sidebar Header */
+    .sidebar-header {
+      padding: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #4ea8ff;
+    }
+
+    .sidebar-header i {
+      font-size: 26px;
+      color: #4ea8ff;
+    }
+
+    /* Menu */
+    .sidebar-menu {
+      list-style: none;
+      padding: 20px 0;
+      margin: 0;
+      flex: 1;
+    }
+
+    .sidebar-menu li {
+      margin-bottom: 5px;
+    }
+
+    .sidebar-menu a {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 12px 25px;
+      color: #ddd;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s;
+      border-left: 4px solid transparent;
+    }
+
+    .sidebar-menu a:hover,
+    .sidebar-menu a.active {
+      background: #2a3645;
+      color: #fff;
+      border-left: 4px solid #4ea8ff;
+    }
+
+    /* Colorful icons */
+    .sidebar-menu i {
+      font-size: 20px;
+    }
+    .bi-speedometer2 { color: #f39c12; }
+    .bi-plus-circle { color: #27ae60; }
+    .bi-box-arrow-in-right { color: #e74c3c; }
+    .bi-arrow-return-left { color: #9b59b6; }
+
+    /* Bottom section */
+    .sidebar-footer {
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sidebar-footer .btn {
+      border-radius: 5px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .btn-login {
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #fff;
+    }
+
+    .btn-login:hover {
+      background: #2a3645;
+    }
+
+    .btn-signup {
+      background: #0d6efd;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-signup:hover {
+      background: #0b5ed7;
+    }
+
+    /* Content area */
+    .content {
+      margin-left: 280px; /* sidebar ke liye space */
+      flex: 1;
+      background: #f8f9fa;
+      padding: 30px;
+    }

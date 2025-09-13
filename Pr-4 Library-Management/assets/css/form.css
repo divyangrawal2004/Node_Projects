@@ -1,0 +1,185 @@
+/* Body ke liye - overflow hatana */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;  /* ✅ scrollbar hatane ke liye */
+}
+
+/* Last wale row ke liye thoda extra margin-top */
+.form-row.last-row {
+  margin-top: 30px;   /* ✅ upar se gap milega */
+}
+
+
+/* Card style */
+.form-container {
+  background: #ffffff;
+  width: 750px;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #333;
+  position: relative;
+}
+
+.form-container h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+/* ek line me 2 input group */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.form-group img{
+  width: 50px;
+  height: 50px;
+
+}
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #555;
+  /* margin-top: 15px; */
+}
+
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea {
+  padding: 12px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+  background: #f4f6f9;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border: 2px solid #667eea;
+  box-shadow: 0 0 8px rgba(102,126,234,0.3);
+  background: #fff;
+}
+
+/* Checkbox group ek line me */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #333;
+  background: #f4f6f9;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.checkbox-group input {
+  margin-right: 6px;
+}
+
+.checkbox-group label:hover {
+  background: #667eea;
+  color: #fff;
+}
+
+/* Submit button */
+.form-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.form-actions input[type="submit"] {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+}
+
+.form-actions input[type="submit"]:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(102,126,234,0.6);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .form-container {
+    width: 95%;
+    padding: 25px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}
+/* File input aur image ek line me */
+/* Input ko relative banaya */
+.file-input-preview {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.file-input-preview input[type="file"] {
+  padding-right: 70px;  /* image ke liye jagah banayi */
+}
+
+/* Image ko input ke andar right side par fix kiya */
+.file-input-preview img {
+  position: absolute;
+  right: 1px;
+  top: 69%;
+  transform: translateY(-50%);
+  width: 53px;
+  height: 53px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  background: #fff;
+  pointer-events: none; /* taki input click work kare */
+}
