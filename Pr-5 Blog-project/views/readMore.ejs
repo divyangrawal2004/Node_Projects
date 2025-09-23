@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= blog.title %> - Read More</title>
+  <link rel="stylesheet" href="/css/readMore.css">
+</head>
+<body>
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>📖 Blog Details</h1>
+    <p>Explore full details of "<%= blog.title %>"</p>
+  </header>
+
+  <!-- Blog Content -->
+  <div class="read-container">
+    <img src="<%= blog.profile %>" alt="<%= blog.title %>">
+    <span class="category"><%= blog.category %></span>
+    <h2><%= blog.title %></h2>
+    <p><%= blog.description %></p>
+    <a href="/show" class="back-btn">⬅ Back to Blogs</a>
+  </div>
+</body>
+</html>

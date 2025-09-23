@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Blog</title>
+  <link rel="stylesheet" href="./css/form.css">
+</head>
+<body>
+  <!-- <header>
+    <h1>Add Blog</h1>
+    <a href="/show" class="btn back-btn">← Back to Blogs</a>
+  </header> -->
+  <header>
+  <a href="/" class="btn left-btn">+ Add New</a>   <!-- Left side button -->
+  <h1>Add Blog</h1>
+  <a href="/show" class="btn right-btn">← Back to Blogs</a> <!-- Right side button -->
+</header>
+
+
+  <div class="form-container">
+    <form action="/formAdd" method="post" enctype="multipart/form-data" class="blog-form">
+      <div class="form-group">
+        <label>Blog Image</label>
+        <input type="file" name="profile" required>
+      </div>
+
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" placeholder="Enter blog title" required>
+      </div>
+
+      <div class="form-group">
+        <label>Description</label>
+        <textarea name="description" rows="4" placeholder="Enter blog description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Category</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="category" value="Technology"> Technology</label>
+          <label><input type="checkbox" name="category" value="Science"> Science</label>
+          <label><input type="checkbox" name="category" value="Business"> Business</label>
+          <label><input type="checkbox" name="category" value="Politics"> Politics</label>
+        
+        </div>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

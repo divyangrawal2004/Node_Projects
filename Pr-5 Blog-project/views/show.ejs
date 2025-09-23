@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Show Blog</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Show Blog</h1>
+    <form action="/search" method="GET" class="search-form">
+      <input type="text" name="q" placeholder="Search blogs..." class="search-input">
+      <button type="submit" class="search-btn">Search</button>
+    </form>
+    <a href="/" class="btn add-btn">+ Add Blog</a>
+  </header>
+
+  <div class="blog-container">
+    <% blog.map((val) => { %>
+      <div class="card">
+        <img src="<%= val.profile %>" alt="<%= val.title %>">
+        <div class="card-content">
+          <span class="category"><%= val.category %></span>
+          <h3><%= val.title %></h3>
+          <p><%= val.description %></p>
+          <a href="/readMore/<%= val.id %>" class="btn read-btn">Read more</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
