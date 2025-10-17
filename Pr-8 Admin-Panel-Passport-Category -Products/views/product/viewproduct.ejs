@@ -1,0 +1,136 @@
+<%- include('../header') %>
+
+<div class="page-wrapper">
+  <div class="container-fluid py-4">
+    <h3 class="text-center fw-bold mb-4 text-primary">🛍 Product Showcase</h3>
+
+    <div class="row">
+      <% products.map((v, i) => { %>
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+          <div class="product-card">
+            
+            <!-- Product Image -->
+            <div class="product-img">
+              <img src="/uploads/productsimages/<%= v.image %>" alt="Product Image">
+            </div>
+            
+            <!-- Product Info -->
+            <div class="product-info">
+              <h5 class="fw-bold text-dark"><%= v.title %></h5>
+              <p class="text-muted small mb-2"><%= v.description.substring(0, 60) %>...</p>
+              
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="price-tag">₹ <%= v.price %></span>
+                <span class="stock">Qty: <%= v.quantity %></span>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-flex justify-content-between mt-3">
+                <a href="/product/<%= v._id %>" class="btn-action view">🔍 View</a>
+                <a href="/product/edit/<%= v._id %>" class="btn-action edit">✏ Edit</a>
+                <a href="/product/delete/<%= v._id %>" onclick="return confirm('Are you sure?')" class="btn-action delete">🗑 Delete</a>
+              </div>
+            </div>
+
+            <div class="card-footer text-end small text-muted px-3 pb-2">#<%= i + 1 %></div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</div>
+
+<%- include('../footer') %>
+
+<style>
+  /* 🌟 Product Card Modern UI */
+  .product-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  }
+
+  .product-img {
+    height: 220px;
+    overflow: hidden;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+  }
+
+  .product-card:hover .product-img img {
+    transform: scale(1.1);
+  }
+
+  .product-info {
+    padding: 1rem 1.2rem;
+    flex-grow: 1;
+  }
+
+  .price-tag {
+    font-weight: bold;
+    color: #28a745;
+    font-size: 1.1rem;
+  }
+
+  .stock {
+    color: #6c757d;
+    font-size: 0.9rem;
+  }
+
+  .btn-action {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    margin: 0 3px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+
+  .btn-action.view {
+    background: #17a2b8;
+    color: #fff;
+  }
+
+  .btn-action.edit {
+    background: #ffc107;
+    color: #000;
+  }
+
+  .btn-action.delete {
+    background: #dc3545;
+    color: #fff;
+  }
+
+  .btn-action:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+  }
+
+  .card-footer {
+    background: transparent;
+    border: none;
+  }
+</style>

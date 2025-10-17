@@ -1,0 +1,175 @@
+<%- include('../header') %>
+
+<div class="page-wrapper">
+  <div class="container-fluid py-4">
+    <!-- 🧭 Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold text-primary">📋 Extra Category List</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-transparent m-0">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Extra Category</li>
+        </ol>
+      </nav>
+    </div>
+
+    <!-- 🔍 Search Box -->
+    <form class="search-box mb-4">
+      <input type="text" name="search" placeholder="🔎 Search category or subcategory..." />
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+
+    <!-- 📦 Table Card -->
+    <div class="card shadow-lg border-0 rounded-4">
+      <div class="card-header bg-gradient text-white fw-bold fs-5" 
+           style="background: linear-gradient(90deg, #6f42c1, #d63384); border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+        Extra Categories Overview
+      </div>
+
+      <div class="table-responsive">
+        <table class="table align-middle mb-0 text-center">
+          <thead class="table-light">
+            <tr>
+              <th>#</th>
+              <th>Category Image</th>
+              <th>Category Name</th>
+              <th>Subcategory</th>
+              <th>Extra Category</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% extracategories.map((v, i) => { %>
+              <tr class="table-row">
+                <td class="fw-bold text-secondary"><%= i + 1 %></td>
+                <td>
+                  <img src="<%= v.category.categoryimage %>"
+                       class="category-img shadow-sm"
+                       alt="category-image" />
+                </td>
+                <td><%= v.category.categoryname %></td>
+                <td><%= v.subcategory.subcategory %></td>
+                <td><span class="badge bg-info text-dark px-3 py-2"><%= v.extracategory %></span></td>
+                <td>
+                  <a href="/extracategory/editextracategorypage/<%= v.id %>" class="btn-action edit">✏ Edit</a>
+                  <a href="/extracategory/deleteextracategory/<%= v.id %>" onclick="return confirm('Are you sure?')" class="btn-action delete">🗑 Delete</a>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../footer') %>
+
+<style>
+  /* 🌈 Page Styling */
+  .page-wrapper {
+    background: linear-gradient(135deg, #f0f3ff, #faf7ff);
+    min-height: 100vh;
+  }
+
+  /* 🔍 Search Box */
+  .search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 10px 15px;
+    border: 2px solid #6f42c1;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+  }
+
+  .search-box input:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 10px rgba(111, 66, 193, 0.3);
+  }
+
+  .btn-search {
+    background: linear-gradient(90deg, #6f42c1, #d63384);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .btn-search:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(214, 51, 132, 0.4);
+  }
+
+  /* 📋 Table Styling */
+  .table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+  }
+
+  .table-row {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+  }
+
+  .table-row:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  }
+
+  .table thead th {
+    background: #f8f9fa;
+    font-weight: 700;
+    color: #6f42c1;
+  }
+
+  .category-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  /* 🎯 Buttons */
+  .btn-action {
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .btn-action.edit {
+    background: #ffc107;
+    color: #000;
+  }
+
+  .btn-action.delete {
+    background: #dc3545;
+    color: #fff;
+  }
+
+  .btn-action:hover {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .search-box input {
+      width: 100%;
+    }
+
+    .btn-search {
+      padding: 8px 14px;
+    }
+  }
+</style>

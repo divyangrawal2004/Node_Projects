@@ -1,0 +1,163 @@
+<%- include('../header') %>
+
+<div class="page-wrapper">
+  <div class="container-fluid py-5">
+    <div class="row justify-content-center align-items-center">
+      
+      <!-- Product Card -->
+      <div class="col-lg-10">
+        <div class="product-detail-card">
+          
+          <!-- Left: Image Section -->
+          <div class="product-image">
+            <img src="/uploads/productsimages/<%= product.image %>" alt="Product Image" />
+          </div>
+
+          <!-- Right: Info Section -->
+          <div class="product-info">
+            <h2 class="product-title mb-3"><%= product.title %></h2>
+            
+            <div class="info-grid">
+              <p><strong>Category:</strong> <span><%= product.category.categoryname %></span></p>
+              <p><strong>Subcategory:</strong> <span><%= product.subcategory.subcategory %></span></p>
+              <p><strong>Extra Category:</strong> <span><%= product.extracategory.extracategory %></span></p>
+              <p><strong>Price:</strong> <span class="text-success fw-bold">₹ <%= product.price %></span></p>
+              <p><strong>Quantity:</strong> <span><%= product.quantity %></span></p>
+            </div>
+
+            <div class="desc-box mt-3">
+              <h5>Description:</h5>
+              <p><%= product.description %></p>
+            </div>
+
+            <div class="mt-4">
+              <a href="/product/viewproductpage" class="btn-back">⬅ Back to Products</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../footer') %>
+
+<style>
+  /* 🌟 Product Detail Modern Card */
+  .product-detail-card {
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.3);
+    transition: all 0.4s ease;
+  }
+
+  .product-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  }
+
+  /* 🖼 Left Side Image */
+  .product-image {
+    flex: 1 1 45%;
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .product-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+  }
+
+  .product-image img:hover {
+    transform: scale(1.05);
+  }
+
+  /* 📦 Right Side Info */
+  .product-info {
+    flex: 1 1 55%;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffffffd9, #f9f9ffcc);
+    border-left: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .product-title {
+    color: #4b0082;
+    font-weight: 700;
+  }
+
+  .info-grid p {
+    font-size: 1rem;
+    margin: 0.4rem 0;
+  }
+
+  .info-grid strong {
+    color: #343a40;
+  }
+
+  .info-grid span {
+    color: #555;
+  }
+
+  /* 📄 Description Box */
+  .desc-box {
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 10px;
+    border-left: 4px solid #6f42c1;
+  }
+
+  .desc-box h5 {
+    margin-bottom: 0.5rem;
+    color: #6f42c1;
+  }
+
+  .desc-box p {
+    margin: 0;
+    color: #444;
+  }
+
+  /* 🔙 Back Button */
+  .btn-back {
+    background: linear-gradient(90deg, #6f42c1, #e83e8c);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn-back:hover {
+    background: linear-gradient(90deg, #e83e8c, #6f42c1);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(111,66,193,0.5);
+  }
+
+  @media (max-width: 768px) {
+    .product-detail-card {
+      flex-direction: column;
+    }
+
+    .product-info {
+      border-left: none;
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .product-image img {
+      max-height: 300px;
+    }
+  }
+</style>
